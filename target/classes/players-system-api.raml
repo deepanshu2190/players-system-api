@@ -1,0 +1,66 @@
+#%RAML 1.0
+baseUri: localhost:8034/players
+title: Sample API
+/players:
+  get:
+    responses: 
+      '200':
+        description: Get All Players Details
+        body: 
+          application/json: 
+            example: { "playerid": "", "name": "", "age": "", "weight": "", "sports": "", "gender": "" }
+  post:
+    body:
+      application/json: 
+        example: { "playerid": "", "name": "", "age": "", "weight": "", "sports": "", "gender": "" }
+    responses: 
+      '200':
+        description: Enter Playres Details
+        body:
+          application/json: 
+            example:
+              {"staus": "Added"}
+  '/{playerid}':
+    get:
+      responses: 
+        '200':
+          description: Get Player Details
+          body: 
+            application/json: 
+              example: { "playerid": "", "name": "", "age": "", "weight": "", "sports": "", "gender": "" }
+    post:
+      body: 
+        application/json: 
+          example: { "playerid": "", "name": "", "age": "", "weight": "", "sports": "", "gender": "" }
+      responses: 
+        '200':
+          description: Enter Player Details
+          body: 
+            application/json: 
+              example:
+                {"status": "Added"}
+    put:
+      body: 
+        application/json: 
+          example: { "playerid": "", "name": "", "age": "", "weight": "", "sports": "", "gender": "" }
+      responses: 
+        '200':
+          description: Update Player Details
+          body: 
+            application/json: 
+              example:
+                {"status": "Details Updated"}
+    delete:
+      body: 
+        application/json: 
+          example: { "playerid": "", "name": "", "age": "", "weight": "", "sports": "", "gender": "" }
+      responses: 
+        '200':
+          description: 
+          body: 
+            application/json: 
+              example:
+                {"status": "Details Deleted"}
+                                  
+                        
+                                                     
